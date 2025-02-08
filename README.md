@@ -27,7 +27,7 @@
  INFO wasm_server_runner: compressed wasm output is 5.67mb large
  INFO wasm_server_runner::server: starting webserver at http://127.0.0.1:1334
 ```
-预构建版本在[bye_pcd_viewer_rs.wasm](./www/bye_pcd_viewer_rs.wasm)
+预构建版本为[bye_pcd_viewer_rs.wasm], 在Release可以下载.
 
 在浏览器中打开链接 http://127.0.0.1:1334，你应该会看到：
 ![run_browser.png](doc/run_browser.png)
