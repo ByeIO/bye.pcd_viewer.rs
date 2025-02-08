@@ -1,0 +1,3 @@
+# 忽略大文件
+target/*
+www/bye_pcd_viewer_rs.wasm

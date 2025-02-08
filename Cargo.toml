@@ -1,0 +1,43 @@
+[package]
+name = "bye_pcd_viewer_rs"
+version = "0.1.68"
+edition = "2021"
+authors = ["REASY Artavazd Balaian","qsbye <2557877116@qq.com>"]
+license = "MIT"
+readme = "README.md"
+documentation = "https://docs.rs/bye_pcd_viewer_rs/"
+repository = "https://github.com/qsbye/bye.pcd_viewer.rs"
+homepage = "https://github.com/qsbye/bye.pcd_viewer.rs"
+description = "Viewing PCD(Point Cloud Library) file in Rust"
+exclude = ["target","git","doc","www/bye_pcd_viewer_rs.wasm"]
+
+[profile.dev]
+opt-level = 1
+
+[profile.release]
+debug = 1
+
+[profile.dev.package."*"]
+opt-level = 3
+
+
+[dependencies]
+anyhow = "1"
+arrow-array = "53.1.0"
+arrow-schema = "53.1.0"
+bevy = "0.14.2"
+bevy_common_assets = { version = "0.11.0", features = ["json"] }
+# Uncomment once bevy-inspector-egui moves to bevy 0.11.0, https://github.com/jakobhellermann/bevy-inspector-egui/pull/141
+#bevy-inspector-egui = "0.18.3"
+bytes = "1.7"
+cfg-if = "1"
+log = "0.4"
+parquet = { version = "53.1.0", default-features = false, features = ["arrow", "arrow-schema", "arrow-array", "snap", "flate2", "brotli"] }
+serde = { version = "1" }
+serde_json = { version = "1", optional = true }
+smooth-bevy-cameras = { version = "0.12" }
+thiserror = "1.0"
+
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+console_error_panic_hook = "0.1"
+console_log = "1.0.0"
